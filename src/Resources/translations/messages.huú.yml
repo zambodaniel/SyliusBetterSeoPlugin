@@ -1,0 +1,11 @@
+app:
+    ui:
+        page_title: Oldal Cím
+        seo: SEO
+        twitter_description: Twitter Leírás
+        twitter_title: Twitter Cím
+        twitter_site: Twitter Oldal
+        og_url: OG Url
+        og_description: OG Leírás
+        og_title: OG Cím
+        extra_tags: Extra Nyers Meta Tag-ek
