@@ -24,8 +24,8 @@
   {% endif %}
 {% endfor %}
 
-{% if product.images.first %}
-  {% set source_image_path = product.images.first.path %}
+{% if product.imagesByType('main').first %}
+  {% set source_image_path = product.imagesByType('main').first.path %}
   {% set original_image_path = source_image_path|imagine_filter('sylius_shop_product_original') %}
 {% endif %}
 
@@ -45,6 +45,13 @@
     {% if product.images.first %}
       "image": "{{ original_image_path }}",
     {% endif %}
+    {% if product.brand is defined %}
+      "brand": {
+        "@type": "Brand",
+        "name": "{{ product.brand.name }}"
+      },
+    {% endif %}
+    "sku": "{{ product.code }}",
     {% if reviews is not empty %}
       "review": [
         {% for review in reviews %}
